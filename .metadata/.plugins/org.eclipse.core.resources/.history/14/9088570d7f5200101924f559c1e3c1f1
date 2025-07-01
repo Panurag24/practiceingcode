@@ -1,0 +1,37 @@
+package binartytree;
+
+ class TreeNode{
+	int val;
+	TreeNode left;
+	TreeNode right;
+	
+	 TreeNode(int val1, TreeNode left1, TreeNode right1) {
+		// TODO Auto-generated constructor stub
+		this.val = val1;
+		this.left = left1;
+		this.right = right1;
+	}
+	  TreeNode() {
+		// TODO Auto-generated constructor stub
+	}
+	  TreeNode(int val){this.val = val;}
+}
+
+public class solvebinary {
+	
+	public int maxdepth(TreeNode root) {
+		if(root == null) {
+			return 0;
+		}
+	
+		return 1 + Math.min(maxdepth(root.left),maxdepth(root.right));
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	
+
+	}
+
+}

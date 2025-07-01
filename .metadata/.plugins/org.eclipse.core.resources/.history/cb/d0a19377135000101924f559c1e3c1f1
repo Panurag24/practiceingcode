@@ -1,0 +1,46 @@
+package numerical_questions;
+
+import java.security.cert.CertPathChecker;
+import java.util.ArrayList;
+import java.util.List;
+
+public class numerics {
+	
+	private static int[] Checker(int[] arr, int n) {
+		int maxcnt = 0;
+		int mostfreq = 0;
+		List<Integer> temp = new ArrayList<Integer>();
+		for(int i = 0 ; i < arr.length - 1;i++) {
+			int cnt = 1;
+			for(int j = i + 1; j < arr.length;j++) {
+				if(arr[i] == arr[j] && i != j) {
+					cnt++;
+				}
+			}
+			if(cnt > maxcnt) {
+				maxcnt = cnt;
+				mostfreq = arr[i];
+			}
+			temp.add(mostfreq);
+			temp.add(maxcnt);
+			int[] ans = new int[temp.size()];
+			int z = 0;
+			for(int aa : temp) {
+				ans[z++] = aa;
+			}
+			
+		}
+		return ans;
+	}
+	
+	public static void main(String[] args) {
+		int[] arr = {1,2,3,4,4,4,4,5,6};
+		int[] ans = Checker(arr,4);
+		for(int i = 0 ;i < ans.length;i++) {
+			System.out.print(ans[i] + " ");
+		}
+		
+		
+	}
+
+}

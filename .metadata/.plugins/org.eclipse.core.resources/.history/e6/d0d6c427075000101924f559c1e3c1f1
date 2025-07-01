@@ -1,0 +1,33 @@
+package recurrisionjava;
+
+public class recurr {
+	
+	private static int recurr(int n) {
+		if(n == 0) {
+			return 0;
+		}if( n == 1) {
+			return 1;
+		}
+		return recurr(n - 1) + recurr(n - 2);
+	}
+	
+	private static int factorial(int n) {
+		if(n != 0) {
+			return n * factorial(n - 1);
+		}
+		
+		return 1;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+//		int ans = recurr(10);
+//		System.out.println(ans);
+		
+		int ans1 = factorial(5);
+		System.out.println(ans);
+
+	}
+
+}

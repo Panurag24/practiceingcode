@@ -1,0 +1,29 @@
+package com.pandit.demopracticemaven;
+
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.ser.std.ClassSerializer;
+
+@RestController
+public class linkdata {
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	
+	@GetMapping("/get-data")
+	
+	public String data() {
+		String url = " https://www.google.com/search?q=spring+boot+api+connectivity+code+base&sca_esv=e636a3bf86a437ec&sxsrf=AE3TifN-sErJgU0wcg9NuoOr0YjWVi9G9Q%3A1750748287109&ei=f0xaaI-4Bqi60-kP8sKggQg&ved=0ahUKEwjP8_nNvYmOAxUo3TQHHXIhKIAQ4dUDCBA&uact=5&oq=spring+boot+api+connectivity+code+base&gs_lp=Egxnd3Mtd2l6LXNlcnAiJnNwcmluZyBib290IGFwaSBjb25uZWN0aXZpdHkgY29kZSBiYXNlMgUQIRigATIFECEYoAEyBRAhGJ8FMgUQIRifBTIFECEYnwUyBRAhGJ8FMgUQIRifBTIFECEYnwUyBRAhGJ8FSOYXULABWOQWcAF4AZABAJgB5QGgAbMOqgEFMC40LjW4AQPIAQD4AQGYAgqgAtIOwgIKEAAYsAMY1gQYR8ICBhAAGBYYHsICCxAAGIAEGIYDGIoFwgIFEAAY7wXCAggQABiiBBiJBcICCBAAGIAEGKIEwgIHECEYoAEYCpgDAIgGAZAGCJIHBTEuNC41oAerVLIHBTAuNC41uAfPDsIHBTAuOS4xyAcV&sclient=gws-wiz-serp";
+		ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+		
+		return response.getBody();
+		 
+	}
+
+}

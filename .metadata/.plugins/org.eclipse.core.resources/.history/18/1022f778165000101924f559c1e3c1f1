@@ -1,0 +1,34 @@
+package hashmap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class codhash {
+	
+	private static int findMostFrequentUsingMap(int[] arr) {
+		int maxCount = 0;
+	    int mostFrequent = arr[0];
+		Map<Integer, Integer> temp = new HashMap<Integer, Integer>();
+		for(int aa : arr) {
+			temp.put(aa, temp.getOrDefault(aa, 0) + 1);
+			if(temp.get(aa) > maxCount) {
+				maxCount = temp.get(aa);
+				mostFrequent = aa;
+			}
+		}
+		
+		return mostFrequent;
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] arr = {1,2,3,4,5,5,5,4,5,6};
+//		 System.out.println("Brute Force Result: " + findMostFrequentBruteForce(arr));
+		    System.out.println("HashMap Result: " + findMostFrequentUsingMap(arr));
+
+	}
+
+}

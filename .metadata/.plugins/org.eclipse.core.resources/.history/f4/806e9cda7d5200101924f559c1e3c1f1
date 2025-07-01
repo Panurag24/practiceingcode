@@ -1,0 +1,27 @@
+package binartytree;
+
+public class TreeNode{
+	int val;
+	TreeNode left;
+	TreeNode right;
+	
+	 TreeNode(int val1, TreeNode left1, TreeNode right1) {
+		// TODO Auto-generated constructor stub
+		this.val = val1;
+		this.left = left1;
+		this.right = right1;
+	}
+	  TreeNode() {
+		// TODO Auto-generated constructor stub
+	}
+	  TreeNode(int val){this.val = val;}
+}
+
+public class solvebinary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
